@@ -67,13 +67,17 @@ nav a:hover {
   color: #ce0031;
 }
 
+.fa-bars {
+  display: none;
+}
+
 /* MAIN  */
 
 main {
   background: url('https://images.unsplash.com/photo-1481824429379-07aa5e5b0739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1896&q=80') 100% 40% no-repeat;
   background-size: cover;
   color: white;
-  padding-bottom: 2%;
+  padding-bottom: 1.5%;
 }
 
 main > div {
@@ -113,12 +117,12 @@ main > div > section > a:hover {
 /* right */
 
 main > div section + section {
-  transform: rotate(90deg);
+  transform: rotate(90deg) translate(50%, -38%);
 }
 
 main>div section+section span {
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 /* bottom */
@@ -163,6 +167,21 @@ div+section h2 {
   font-weight: 400;
 }
 
+/* ARROWS */
+
+main div + section + section {
+  text-align: end;
+  padding-right: 5%;
+}
+
+.arrow {
+  font-size: 1.4rem;
+  padding: 0.7%;
+  background: white;
+  color: black;
+  border-radius: 100px;
+}
+
 /* SECOND SECTION */
 
 main + div {
@@ -195,9 +214,9 @@ div + div {
 div+div p {
   font-size: 1.4rem;
   font-weight: 400;
-  padding-right: 10%;
+  /* padding-right: 10%; */
   line-height: 22px;
-  padding-bottom: 2.8%;
+  padding-bottom: 4%;
 }
 
 div > section > h1 {
@@ -216,7 +235,7 @@ div>section>a:hover {
 }
 
 div+div > section + img {
-  padding-left: 2%;
+  padding: 0 3%;
   width: 50%;
 }
 
@@ -230,7 +249,7 @@ div + div + div {
 }
 
 div+div+div section {
-  padding: 0 5%;
+  padding: 0 3.8%;
   text-align: center;
 }
 
@@ -308,21 +327,52 @@ div+div+div+section+div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding-bottom: 1%;
 }
 
-/* .first > img:first-child {
-  margin-bottom: 37.1%;
-  position: relative;
+div+div+div+section+div > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
-.first > img:last-child {
-  margin-bottom: 37.1%;
-  position: relative;
-} */
+div+div+div+section+div>div section {
+  flex-basis: 270px;
+}
 
-/* .second>img:first-child {
-  margin-bottom: -50%;
-} */
+div+div+div+section+div>div section img {
+  padding-bottom: 5%;
+}
+
+div+div+div+section+div>div section img:hover {
+  opacity: 0.7;
+}
+
+div+div+div+section+div > section > h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 7%;
+}
+
+hr {
+  width: 10%;
+  border: 2px solid black;
+  border-radius: 1.5px;
+  margin-bottom: 12%;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 1.5%;
+  background: black;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -330,21 +380,38 @@ div+div+div+section+div {
 
 /* MEDIA QUERIES */
 
-@media all and (max-width: 1300px) {
+@media all and (max-width: 1415px) {
   /* main screen */
   /* right */
-  main>div section+section span {
-    font-size: 2rem;
-  }
+  /* main>div section+section span {
+    font-size: 3rem;
+  } */
   /* bottom */
   main > div+section {
     width: 30%;
     margin-left: 35%;
   }
+  /* THIRD SECTION */
+  div + div {
+    padding-bottom: 3.5%;
+  }
 }
 
 @media all and (max-width: 1050px) {
   /* NAVBAR  */
+  nav div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-basis: 15%;
+  }
+  .fa-bars {
+    display: block;
+    padding-left: 10%;
+  }
+  nav div a {
+    width: 100%;
+  }
   nav {
     justify-content: space-evenly;
   }
@@ -354,6 +421,7 @@ div+div+div+section+div {
   nav ul {
     padding: 0;
     margin: 1.4%;
+    margin-left: 8%;
   }
   nav ul>li:nth-last-child(2), nav ul>li:last-child {
     display: block;
@@ -361,7 +429,7 @@ div+div+div+section+div {
 
   nav ul>li:nth-last-child(2) {
     padding-right: 60%;
-    padding-left: 100%;
+    margin-left: 100%;
   }
 
     nav ul>li:last-child {
@@ -408,7 +476,9 @@ div+div+div+section+div {
   }
     main+div+div img {
       padding-top: 5%;
+      padding-bottom: 3%;
     }
+
   /* FOURTH SECTION */
   div+div+div {
     flex-direction: column;
@@ -416,5 +486,15 @@ div+div+div+section+div {
 
   div+div+div section {
     padding: 5%;
+  }
+  /* LAST SECTION */
+  div+div+div+section+div>div section img {
+    width: 90%;
+  }
+  /* ARROWS */
+  main div+section+section {
+    text-align: center;
+    padding: 0;
+    padding-top: 1.2%;
   }
 }

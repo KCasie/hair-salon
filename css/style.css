@@ -105,7 +105,7 @@ main a {
   padding: 12px 23px;
 }
 
-main a:hover {
+main > div > section > a:hover {
   background: white;
   color: black;
 }
@@ -215,6 +215,11 @@ div>section>a:hover {
   background: #ce0031;
 }
 
+div+div > section + img {
+  padding-left: 2%;
+  width: 50%;
+}
+
 /* FOURTH SECTION */
 
 div + div + div {
@@ -322,3 +327,94 @@ div+div+div+section+div {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+/* MEDIA QUERIES */
+
+@media all and (max-width: 1300px) {
+  /* main screen */
+  /* right */
+  main>div section+section span {
+    font-size: 2rem;
+  }
+  /* bottom */
+  main > div+section {
+    width: 30%;
+    margin-left: 35%;
+  }
+}
+
+@media all and (max-width: 1050px) {
+  /* NAVBAR  */
+  nav {
+    justify-content: space-evenly;
+  }
+  nav ul > li {
+    display: none;
+  }
+  nav ul {
+    padding: 0;
+    margin: 1.4%;
+  }
+  nav ul>li:nth-last-child(2), nav ul>li:last-child {
+    display: block;
+  }
+
+  nav ul>li:nth-last-child(2) {
+    padding-right: 60%;
+    padding-left: 100%;
+  }
+
+    nav ul>li:last-child {
+      padding-left: 60%;
+    }
+
+  /* MAIN */
+  main>div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  main>div>section {
+    padding-bottom: 5%;
+  }
+  main > div > section> a {
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+  /* right */
+  main>div section+section {
+    transform: none;
+    /* padding-top: 5%; */
+  }
+  /* SECOND SECTION */
+  main + div {
+    flex-direction: column;
+    font-size: 5.5rem;
+  }
+  main+div h4 {
+    margin: 0;
+    padding-top: 3%;
+  }
+  main+div p {
+    padding: 0 15%;
+  }
+
+  /* THIRD SECTION */
+  main+div + div {
+    flex-direction: column;
+    text-align: center;
+  }
+    main+div+div img {
+      padding-top: 5%;
+    }
+  /* FOURTH SECTION */
+  div+div+div {
+    flex-direction: column;
+  }
+
+  div+div+div section {
+    padding: 5%;
+  }
+}
